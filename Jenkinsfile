@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+	parameters {
+        string(name: 'GIT_HASH', defaultValue: '', description: 'Enter the git commit hash to checkout under specified branch')
+    }
+	
     stages {
         stage('Git Checkout') {
             steps {
